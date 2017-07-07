@@ -8,7 +8,7 @@
     "example": "examples"
   },
   "scripts": {
-    "deploy": "deploy"
+    "deploy": "gulp deploy"
   },
   "repository": {
     "type": "git",
