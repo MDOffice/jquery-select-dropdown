@@ -4,10 +4,21 @@
   "description": "",
   "author": "Kelatev",
   "license": "MIT",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "directories": {
+    "example": "examples"
   },
+  "scripts": {
+    "start": "brunch watch --server",
+    "build": "brunch build --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelatev/jquery-select-dropdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kelatev/jquery-select-dropdown/issues"
+  },
+  "homepage": "https://github.com/kelatev/jquery-select-dropdown#readme",
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "del": "^3.0.0",
