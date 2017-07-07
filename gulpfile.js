@@ -90,5 +90,4 @@ gulp.task('default', ['connect', 'scripts', 'styles'], function () {
     gulp.watch(paths.styles, ['styles']);
 });
 
-gulp.task('deploy', ['clean', 'scripts-deploy', 'styles-deploy'], function () {
-});
+gulp.task('deploy', ['scripts-deploy', 'styles-deploy']);
