@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>jQuery.autosave Examples</title>
+
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/6.0.6/css/aui.min.css" media="all">
+    <link rel="stylesheet" href="styles/jquery-select-dropdown.css"/>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="scripts/jquery-select-dropdown.js"></script>
+</head>
+<body>
+<h1>jQuery Select Dropdown Examples</h1>
+
+<h2>The Edit</h2>
+
+<select id="cert_xls_coll_1" class="form-control input-sm" tabindex="-1" style="display: none;">
+    <option value="">&nbsp;</option>
+    <option value="p_good_num" data-width="12.96">Номер товара</option>
+    <option value="p_good_places" data-width="26.99">Количество мест, вид упаковки</option>
+    <option value="p_good_desc" data-width="74.08">Описание товара</option>
+    <option value="p_good_criter" data-width="15.88">Критерий происхождения</option>
+    <option value="p_good_measure" data-width="25.93">Вес Брутто/Нетто</option>
+    <option value="p_good_inv" data-width="24.61">Номер и дата инвойса, или цена</option>
+</select>
+
+<select id="cert_xls_coll_8" class="form-control input-sm" tabindex="-1" style="display: none;">
+    <option value="">&nbsp;</option>
+    <option value="p_good_num" data-width="12.96">Номер товара</option>
+    <option value="p_good_places" data-width="26.99">Количество мест, вид упаковки</option>
+    <option value="p_good_desc" data-width="74.08" selected>Описание товара</option>
+    <option value="p_good_criter" data-width="15.88">Критерий происхождения</option>
+    <option value="p_good_measure" data-width="25.93">Вес Брутто/Нетто</option>
+    <option value="p_good_inv" data-width="24.61">Номер и дата инвойса, или цена</option>
+</select>
+
+<script>
+    $('select').selectD({
+        text_active_class: 'warning',
+        dropdown_icon: '<span class="aui-icon aui-icon-small aui-iconfont-edit-small"></span>',
+        templateResult: function (item) {
+            var $item = item.text;
+            if ($(item.element).attr('data-check') === '1') {
+                $item = '<span class="aui-icon aui-icon-small aui-iconfont-success"></span> ' + $item;
+            } else {
+                $item = '<span class="aui-icon aui-icon-small aui-iconfont-success" style="color:transparent"></span> ' + $item;
+            }
+            return $item;
+        },
+        onChange: function (el, el_list, val) {
+            var prev_value = el.attr('data-prev');
+            if (el_list.map(function () {
+                    if (this.value === prev_value) return '1';
+                }).get().join('').length === 0)
+                el_list.find('[value="' + prev_value + '"]').removeAttr('data-check');
+            if (val !== '') {
+                el_list.find('[value="' + val + '"]').attr('data-check', 1);
+            }
+            el.attr('data-prev', val);
+        }
+    });
+</script>
+
+</body>
+</html>
