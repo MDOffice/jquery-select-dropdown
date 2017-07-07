@@ -8,9 +8,7 @@
     "example": "examples"
   },
   "scripts": {
-    "gulp": "gulp",
-    "start": "brunch watch --server",
-    "build": "brunch build --production"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
