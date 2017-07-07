@@ -8,6 +8,7 @@
     "example": "examples"
   },
   "scripts": {
+    "build": "gulp default",
     "deploy": "gulp deploy"
   },
   "repository": {
