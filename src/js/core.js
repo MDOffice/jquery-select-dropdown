@@ -183,7 +183,7 @@
         var wrap = this.$wrap;
         this.$container.css({
             'position': 'absolute',
-            'top': wrap.offset().top + wrap.height(),
+            'top': wrap.offset().top + wrap.outerHeight(),
             'left': wrap.offset().left
         });
 
